@@ -35,14 +35,6 @@ public class Exchange {
         this.name = name;
     }
 
-    public Candle getCandle() {
-        return candle;
-    }
-
-    public void setCandle(Candle candle) {
-        this.candle = candle;
-    }
-
     @Override
     public String toString() {
         return "Exchange{" +
