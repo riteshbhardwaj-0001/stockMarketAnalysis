@@ -20,10 +20,10 @@ public class Candle {
     private BigDecimal lowPrice;
     @Column(name = "high_price" , nullable = false , precision = 6, scale = 2)
     private BigDecimal highPrice;
-    @Column(name = "timestamp", nullable = false, columnDefinition = "TIMESTAMP")
-    private Instant timeStamp;
+    @Column(name = "candle_timestamp", nullable = false, columnDefinition = "TIMESTAMP")
+    private Instant timeStamp;   // YYYY-MM-DD HH:MM:SS
     @OneToOne
-    @JoinColumn(name = "exhangeId")
+    @JoinColumn(name = "exchange_Id")
     private Exchange exchange;
 
 
