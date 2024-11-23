@@ -7,7 +7,9 @@ import jakarta.persistence.*;
 public class Exchange {
 
     @Id
+    @Column(name = "exchange_id", nullable = false)
     private Long id;
+    @Column(name="exchange_name",nullable = false)
     private String name;
 
     public Exchange(){

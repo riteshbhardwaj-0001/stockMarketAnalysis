@@ -11,6 +11,7 @@ public class Candle {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "candle_id", nullable = false)
     private Long id;
     @Column(name = "open_price" , nullable = false , precision = 6, scale = 2)
     private BigDecimal openPrice;
