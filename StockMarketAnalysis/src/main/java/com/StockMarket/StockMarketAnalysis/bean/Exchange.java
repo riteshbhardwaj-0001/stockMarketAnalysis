@@ -10,9 +10,6 @@ public class Exchange {
     private Long id;
     private String name;
 
-    @OneToOne(mappedBy = "exchange", cascade = CascadeType.ALL)
-    private Candle candle;
-
     public Exchange(){
 
     }
