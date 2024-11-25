@@ -1,4 +1,4 @@
-package com.StockMarket.StockMarketAnalysis.bean;
+package com.market.analysis.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,16 +9,16 @@ import java.math.BigDecimal;
 import java.time.Instant;
 
 @Entity
-@Table(name="fii_info")
-public class FiiInfo { //
+@Table(name="dii_info")
+public class DiiInfoModel {
     @Id
-    @Column(name="fii_id", nullable = false)
+    @Column(name="dii_id", nullable = false)
     private Long id;
-    @Column(name="fii_value", nullable = false)
+    @Column(name="dii_value", nullable = false)
     private BigDecimal value;
 
-    @Column(name = "fii_timestamp", nullable = false, columnDefinition = "TIMESTAMP")
-    private Instant  timestamp;  // YYYY-MM-DD HH:MM:SS
+    @Column(name = "dii_timestamp", nullable = false, columnDefinition = "TIMESTAMP")
+    private Instant timestamp;  // YYYY-MM-DD HH:MM:SS
 
     public Long getId() {
         return id;
@@ -43,4 +43,5 @@ public class FiiInfo { //
     public void setTimestamp(Instant timestamp) {
         this.timestamp = timestamp;
     }
+
 }
