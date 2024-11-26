@@ -23,8 +23,8 @@ public class CandleModel extends GenericModel{
     @Column(name = "high_price" , nullable = false , columnDefinition = "DOUBLE")
     private Double highPrice;
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "exchange_Id")
-    private ExchangeModel exchangeModel;
+    @JoinColumn(name = "script_id")
+    private ScriptModel script;
 
 
     /**

@@ -7,24 +7,26 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name="exchange_info")
-public class ExchangeModel {
-
-    @Id
-    private Long id;
+public class ExchangeModel extends GenericModel{
 
     @Enumerated(EnumType.STRING)
     private ExchangeEnum exchangeName;
 
+    @OneToMany(mappedBy = "exchange", orphanRemoval = true, cascade = CascadeType.ALL)
+    private List<ScriptModel> scripts;
+
     @Override
     public String toString() {
         return "Exchange{" +
-                "id=" + id +
+                "id=" +
+                getPK() +
                 ", name='" + exchangeName + '\'' +
                 '}';
     }
