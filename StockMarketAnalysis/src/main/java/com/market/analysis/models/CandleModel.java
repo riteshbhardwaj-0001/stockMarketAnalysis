@@ -22,7 +22,7 @@ public class CandleModel extends GenericModel{
     private Double lowPrice;
     @Column(name = "high_price" , nullable = false , columnDefinition = "DOUBLE")
     private Double highPrice;
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "script_id")
     private ScriptModel script;
 

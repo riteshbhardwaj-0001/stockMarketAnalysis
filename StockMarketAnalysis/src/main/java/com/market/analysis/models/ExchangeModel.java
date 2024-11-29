@@ -13,14 +13,14 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name="exchange_info")
+@Table(name="exchanges")
 public class ExchangeModel extends GenericModel{
 
     @Enumerated(EnumType.STRING)
     private ExchangeEnum exchangeName;
 
-    @OneToMany(mappedBy = "exchange", orphanRemoval = true, cascade = CascadeType.ALL)
-    private List<ScriptModel> scripts;
+    @OneToMany(mappedBy = "exchange" , orphanRemoval = true, cascade = CascadeType.ALL)
+    private List<SectorModel> sectors;
 
     @Override
     public String toString() {
