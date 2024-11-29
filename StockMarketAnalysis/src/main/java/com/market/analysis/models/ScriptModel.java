@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -15,6 +17,10 @@ public class ScriptModel extends GenericModel{
     private String name;
 
     @ManyToOne
-    @JoinColumn(name= "exchange_id")
-    private ExchangeModel exchange;
+    @JoinColumn(name= "industry_id")
+    private IndustryModel industry;
+    @OneToMany(mappedBy = "script" , orphanRemoval = true , cascade = CascadeType.ALL)
+    private List<CandleModel> candles;
+
+
 }
